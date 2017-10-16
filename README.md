@@ -1,14 +1,9 @@
 # KnowEnG's Phenotype Prediction Pipeline
-This is the Knowledge Regression for Genomics (KnowEnG), an NIH BD2K Center of Excellence, Phenotype Prediction Pipeline that will be used to **infer** an 'omic'-drug association.
+This is the Knowledge Engine for Genomics (KnowEnG), an NIH BD2K Center of Excellence, Phenotype Prediction Pipeline.
 
-The user will need to do of the following in order for the system to learn how to **predict** the phenotype through regression:
- * User must submit an ‘omic’ spreadsheet with samples as columns and genes as rows. 
- * User will also need to submit a phenotype value for each sample.
+This pipeline **predicts" the relative importance of a set of genes associated with a given phenotype.
 
-This will allow one to:
- * Identify the best drug for a patient.
-
-Given an omic spreadsheet of a collection of genes as well as the supplied phenotype value, the user will need to choose one of these options:
+This pipeline supports two regression models: 
 
 | **Options**                                      | **Method**                           | **Parameters** |
 | ------------------------------------------------ | -------------------------------------| -------------- |
@@ -99,27 +94,26 @@ Using Lasso
  ## Description of "run_parameters" file
  * * *
  
-| **Key**                   | **Value** | **Comments** |
-| ------------------------- | --------- | ------------ |
-| Method                    | Elastic Net    | http://scikit-learn.org/stable/modules/linear_model.html#elastic-net |
-| Method                    | Lasso    | http://scikit-learn.org/stable/modules/linear_model.html#lasso|
-| results_directory         | Directory | Directory to save the output files |
-| spreadsheet_name_full_path| spreadsheet_name| Input training feature data |
-| response_name_full_path   | response_name   | Input training response data|
-| test_spreadsheet_name_full_path| test_spreadsheet_name| Input testing feature data|
+| **Key**                        | **Value**            | **Comments**                       |
+| -------------------------      | --------------       | ------------                       |
+| Method                         | elastic_net          | scikit-learn.org   elastic-net     |
+| Method                         | lasso                | scikit-learn.org   lasso           |
+| results_directory              | directory            | Directory to save the output files |
+| spreadsheet_name_full_path     | spreadsheet_name     | Input Gene Expression  data        |
+| response_name_full_path        | response_name        | Input Drug Response data           |
+| test_spreadsheet_name_full_path| test_spreadsheet_name| Input testing feature data         |
 
-spreadsheet_name = features_train_clean.df</br>
-response_name = response_train_clean.df</br>
-test_spreadsheet_name = features_test_clean.df
+spreadsheet_name = Gene_Expression_clean.df</br>
+response_name = Drug_Response_clean.df</br>
+test_spreadsheet_name = Gene_Expression_Test.df
 
  * * * 
  ## Description of Output files are saved in results directory
  * * * 
  
- | **Gene Name** | **Prediction**|
- | ------------- | ------------- |
- | User Gene 1   | Float         |
- | ...           | ...           |
- | User Gene n   | Float         |
+ | **Gene Name** | **Relarive Importance**|
+ | ------------- | ---------------------- |
+ | User Gene 1   | Float                  |
+ | ...           | ...                    |
+ | User Gene n   | Float                  |
  
-  
