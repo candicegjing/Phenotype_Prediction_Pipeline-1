@@ -9,3 +9,10 @@ response_name_full_path:         ../data/spreadsheets/response_train_clean.df
 test_spreadsheet_name_full_path: ../data/spreadsheets/features_test_clean.df
 
 results_directory:               ./run_dir/results
+
+# regression model parameters 
+min_alpha: 0.1
+max_alpha: 1
+n_alpha: 10
+fit_intercept: False
+normalize: True
