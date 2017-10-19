@@ -35,7 +35,7 @@ endif
 run_elastic_net:
 	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_2_ElasticNet.yml
 run_lasso:
-	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_1_PPP_Lasso.yml
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_1_Lasso.yml
 
 # Cleanup
 final_clean:	clean_dir_recursively
