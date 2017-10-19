@@ -16,3 +16,5 @@ max_alpha: 1
 n_alpha: 10
 fit_intercept: False
 normalize: True
+max_iter: 2000
+tolerance: 0.01
