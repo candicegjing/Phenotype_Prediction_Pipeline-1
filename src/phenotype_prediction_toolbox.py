@@ -28,9 +28,13 @@ def run_lasso_predict(run_parameters):
     n_alpha       = run_parameters['n_alpha']
     intercept     = run_parameters['fit_intercept']
     normalization = run_parameters['normalize']
+    max_iter      = run_parameters['max_iter']
+    tolerance     = run_parameters['tolerance']
+
     alpha_grid    = np.linspace(min_alpha, max_alpha, num=n_alpha)
     reg_model     = linear_model.LassoCV(
-        alphas=alpha_grid, fit_intercept=intercept, normalize=normalization, max_iter=1000, cv=5)
+        alphas=alpha_grid, fit_intercept=intercept, \
+        normalize=normalization, max_iter=max_iter, tol=tolerance, cv=5)
 
     reg_model.fit( gene_mat.T, sign_mat)
     filename      = os.path.join(run_parameters['results_directory'], 'lasso_model.pkl') 
@@ -65,13 +69,16 @@ def run_elastic_predict(run_parameters):
     n_l1      = run_parameters['n_l1']
     intercept = run_parameters['fit_intercept']
     normalize = run_parameters['normalize']
+    max_iter      = run_parameters['max_iter']
+    tolerance     = run_parameters['tolerance']
+
     alpha_grid= np.linspace(min_alpha, max_alpha, num=n_alpha)
     l1_grid   = np.linspace(min_l1, max_l1, num=n_l1)
 
 
     reg_model = linear_model.ElasticNetCV(
         l1_ratio=l1_grid, alphas=alpha_grid, fit_intercept=intercept, eps = eps,\
-        normalize=normalize, max_iter=1000, cv=5)
+        normalize=normalize, max_iter=max_iter, tol=tolerance, cv=5)
 
     reg_model.fit(gene_mat.T, sign_mat)
 

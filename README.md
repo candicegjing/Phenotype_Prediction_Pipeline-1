@@ -76,7 +76,7 @@ __***Follow steps 1-3 above then do the following:***__
   ```
   Phenotype_Prediction_Pipeline/data/run_files BENCHMARK_2_ElasticNet.yml
   
-  Phenotype_Prediction_Pipeline/data/run_files BENCHMARK_1_PPP_Lasso.yml
+  Phenotype_Prediction_Pipeline/data/run_files BENCHMARK_1_Lasso.yml
 
   ```
  
@@ -87,7 +87,7 @@ Using Elastic net
   ```
 Using Lasso
  ```
- python3 ../src/phenotype.prediction.py -run_directory ./run_dir -run_file BENCHMARK_1_PPP_Lasso.yml
+ python3 ../src/phenotype.prediction.py -run_directory ./run_dir -run_file BENCHMARK_1_Lasso.yml
  ```
  
  * * *
@@ -102,6 +102,14 @@ Using Lasso
 | spreadsheet_name_full_path     | spreadsheet_name     | Input Gene Expression  data        |
 | response_name_full_path        | response_name        | Input Drug Response data           |
 | test_spreadsheet_name_full_path| test_spreadsheet_name| Input testing feature data         |
+| min_alpha                      | float number         | Minimum number in alpha list       |
+| max_alpha                      | float number         | Maximum number in alpha list       |
+| tolerance                      | float number         | The tolerance for the optimization |
+| fit_intercept                  | boolean value        | whether to calculate the intercept for this model | 
+| normalize                      | boolean value        | whether the regressors will be normalized |
+| max_iter                       | integer number       | The maximum number of iterations   |
+| n_alpha                        | integer number       | Number of alphas in alpha list     |
+
 
 spreadsheet_name = Gene_Expression_clean.df</br>
 response_name = Drug_Response_clean.df</br>
