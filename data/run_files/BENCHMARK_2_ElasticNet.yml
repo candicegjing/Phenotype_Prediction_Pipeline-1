@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------------------------------
 # - This is the yaml file for Elastic Net algorithm -
 # ------------------------------------------------------------------------------------------------------
-method:                          elastic_net_predict
+method:                          ElasticNetCV
 
 spreadsheet_name_full_path:      ../data/spreadsheets/features_train_clean.df
 response_name_full_path:         ../data/spreadsheets/response_train_clean.df

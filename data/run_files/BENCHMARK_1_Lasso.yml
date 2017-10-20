@@ -2,7 +2,7 @@
 # - This is the yaml file for lasso algorithm -
 # ------------------------------------------------------------------------------------------------------
 
-method:                          lasso_predict
+method:                          LassoCV
 
 spreadsheet_name_full_path:      ../data/spreadsheets/features_train_clean.df
 response_name_full_path:         ../data/spreadsheets/response_train_clean.df

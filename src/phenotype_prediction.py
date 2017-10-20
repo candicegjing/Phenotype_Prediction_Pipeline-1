@@ -1,16 +1,16 @@
 # this is the main function of PPP
 
-def lasso_predict(run_parameters):
-    from phenotype_prediction_toolbox import run_lasso_predict
-    run_lasso_predict(run_parameters)
+def LassoCV(run_parameters):
+    from phenotype_prediction_toolbox import run_LassoCV
+    run_LassoCV(run_parameters)
     
 
-def elastic_net_predict(run_parameters):
-    from phenotype_prediction_toolbox import run_elastic_predict
-    run_elastic_predict(run_parameters)
+def ElasticNetCV(run_parameters):
+    from phenotype_prediction_toolbox import run_ElasticNetCV
+    run_ElasticNetCV(run_parameters)
 
-SELECT = {'elastic_net_predict': elastic_net_predict,
-            'lasso_predict': lasso_predict}
+SELECT = { 'ElasticNetCV': ElasticNetCV 
+         , 'LassoCV'     : LassoCV     }
 
 def main():
     import sys
