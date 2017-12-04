@@ -83,11 +83,11 @@ __***Follow steps 1-3 above then do the following:***__
 ### * Run
 Using Elastic net
   ```
- python3 ../src/phenotype.prediction.py -run_directory ./run_dir -run_file BENCHMARK_2_ElasticNet.yml
+ python3 ../src/phenotype_prediction.py -run_directory ./run_dir -run_file BENCHMARK_2_ElasticNet.yml
   ```
 Using Lasso
  ```
- python3 ../src/phenotype.prediction.py -run_directory ./run_dir -run_file BENCHMARK_1_Lasso.yml
+ python3 ../src/phenotype_prediction.py -run_directory ./run_dir -run_file BENCHMARK_1_Lasso.yml
  ```
  
  * * *
@@ -96,8 +96,8 @@ Using Lasso
  
 | **Key**                        | **Value**            | **Comments**                       |
 | -------------------------      | --------------       | ------------                       |
-| Method                         | elastic_net          | scikit-learn.org   elastic-net     |
-| Method                         | lasso                | scikit-learn.org   lasso           |
+| Method                         | elastic_net_predict          | scikit-learn.org   elastic-net     |
+| Method                         | lasso_predict                | scikit-learn.org   lasso           |
 | results_directory              | directory            | Directory to save the output files |
 | spreadsheet_name_full_path     | spreadsheet_name     | Input Gene Expression  data        |
 | response_name_full_path        | response_name        | Input Drug Response data           |
@@ -109,11 +109,14 @@ Using Lasso
 | normalize                      | boolean value        | whether the regressors will be normalized |
 | max_iter                       | integer number       | The maximum number of iterations   |
 | n_alpha                        | integer number       | Number of alphas in alpha list     |
+| min_l1                    | float number       | Minimum l1 in the grid of l1|
+| max_l1                    | float number         | Maximum l1 in the grid of l1|
+| n_l1                      | integer number       | Length of grid of l1           | 
+| eps                       | float number     | Length of the path|
 
-
-spreadsheet_name = Gene_Expression_clean.df</br>
-response_name = Drug_Response_clean.df</br>
-test_spreadsheet_name = Gene_Expression_Test.df
+spreadsheet_name = features_train_clean.df</br>
+response_name = response_train_clean.df</br>
+test_spreadsheet_name = features_test_clean.df
 
  * * * 
  ## Description of Output files are saved in results directory
