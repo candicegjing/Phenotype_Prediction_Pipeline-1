@@ -109,10 +109,10 @@ Using Lasso
 | normalize                      | boolean value        | whether the regressors will be normalized |
 | max_iter                       | integer number       | The maximum number of iterations   |
 | n_alpha                        | integer number       | Number of alphas in alpha list     |
-| min_l1                    | 0.1       | Minimum l1 in the grid of l1|
-| max_l1                    | 1         | Maximum l1 in the grid of l1|
-| n_l1                      | 3         | Length of grid of l1           | 
-| eps                       | 0.001     | Length of the path|
+| min_l1                    | float number       | Minimum l1 in the grid of l1|
+| max_l1                    | float number         | Maximum l1 in the grid of l1|
+| n_l1                      | integer number       | Length of grid of l1           | 
+| eps                       | float number     | Length of the path|
 
 spreadsheet_name = features_train_clean.df</br>
 response_name = response_train_clean.df</br>
